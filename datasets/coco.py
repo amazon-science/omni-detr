@@ -369,17 +369,22 @@ def build(image_set, args):
     if args.dataset_file == "voc_omni":
         PATHS = {
             "train": (root / "VOCdevkit/VOC20072012trainval/JPEGImages", root / "VOCdevkit/VOC20072012trainval" / args.annotation_json_label),
-            "val": (root / "VOCdevkit/VOC2007test/JPEGImages", root / "VOCdevkit/VOC2007test" / 'instances_VOC_test2007_test.json'),
+            "val": (root / "VOCdevkit/VOC2007test/JPEGImages", root / "VOCdevkit/VOC2007test" / 'instances_VOC_test2007.json'),
         }
     elif args.dataset_file == "voc_semi":
         PATHS = {
             "train": (root / "VOCdevkit/VOC2007trainval/JPEGImages", root / "VOCdevkit/VOC2007trainval" / args.annotation_json_label),
-            "val": (root / "VOCdevkit/VOC2007test/JPEGImages", root / "VOCdevkit/VOC2007test" / 'instances_VOC_test2007_test.json'),
+            "val": (root / "VOCdevkit/VOC2007test/JPEGImages", root / "VOCdevkit/VOC2007test" / 'instances_VOC_test2007.json'),
+        }
+    elif args.dataset_file == "coco_35to80_tagsU" or args.dataset_file == "coco_35to80_point":
+        PATHS = {
+            "train": (root / "val2014", root / "annotations" / args.annotation_json_label),
+            "val": (root / "val2017", root / "annotations" / 'instances_w_indicator_val2017.json'),
         }
     elif args.dataset_file == "bees_omni":
         PATHS = {
-            "train": (root / "ML-Data_cleared", root / args.annotation_json_label),
-            "val": (root / "ML-Data_cleared", root / 'instances_bees_semi_val.json'),
+            "train": (root / "ML-Data", root / args.annotation_json_label),
+            "val": (root / "ML-Data", root / 'instances_bees_val.json'),
         }
     elif args.dataset_file == "crowdhuman_omni":
         PATHS = {
@@ -429,8 +434,8 @@ def build_semi_label(image_set, args):
         }
     elif args.dataset_file == "bees_omni":
         PATHS = {
-            "train": (root / "ML-Data_cleared", root / args.annotation_json_label),
-            "val": (root / "ML-Data_cleared", root / 'instances_bees_semi_val.json'),
+            "train": (root / "ML-Data", root / args.annotation_json_label),
+            "val": (root / "ML-Data", root / 'instances_bees_val.json'),
         }
     elif args.dataset_file == "crowdhuman_omni":
         PATHS = {
@@ -494,8 +499,8 @@ def build_semi_unlabel(image_set, args):
         }
     elif args.dataset_file == "bees_omni":
         PATHS = {
-            "train": (root / "ML-Data_cleared", root / args.annotation_json_unlabel),
-            "val": (root / "ML-Data_cleared", root / 'instances_bees_semi_val.json'),
+            "train": (root / "ML-Data", root / args.annotation_json_unlabel),
+            "val": (root / "ML-Data", root / 'instances_bees_val.json'),
         }
     elif args.dataset_file == "coco_objects_tagsU" or args.dataset_file == "coco_objects_points":
         PATHS = {
