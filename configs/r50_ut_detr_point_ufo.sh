@@ -2,7 +2,7 @@
 
 set -x
 
-EXP_DIR=results/r50_coco35to80_points_pixels800_ufo_ep500_burnin10
+EXP_DIR=results/r50_coco35to80_points_pixels800_ufo_epoch500_burnin10_thres70
 PY_ARGS=${@:1}
 
 python -u main.py \
@@ -12,7 +12,7 @@ python -u main.py \
     --TEACHER_UPDATE_ITER 1 \
     --EMA_KEEP_RATE 0.9996 \
     --annotation_json_label 'instances_valminusminival2014_w_indicator.json' \
-    --annotation_json_unlabel 'instances_train2014_w_indicator.json' \
+    --annotation_json_unlabel 'instances_train2014_w_indicator_pointsK.json' \
     --CONFIDENCE_THRESHOLD 0.7 \
     --data_path './coco' \
     --lr 2e-4 \
