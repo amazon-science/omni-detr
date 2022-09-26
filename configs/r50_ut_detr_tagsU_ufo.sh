@@ -12,7 +12,7 @@ python -u main.py \
     --TEACHER_UPDATE_ITER 1 \
     --EMA_KEEP_RATE 0.9996 \
     --annotation_json_label 'instances_valminusminival2014_w_indicator.json' \
-    --annotation_json_unlabel 'instances_train2014_w_indicator.json' \
+    --annotation_json_unlabel 'instances_train2014_w_indicator_tagsU.json' \
     --CONFIDENCE_THRESHOLD 0.7 \
     --data_path './coco' \
     --lr 2e-4 \

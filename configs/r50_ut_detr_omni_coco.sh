@@ -22,4 +22,3 @@ python -u main.py \
     --save_freq 20 \
     --dataset_file 'coco_omni' \
     --resume '' \
-

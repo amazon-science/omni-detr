@@ -29,6 +29,8 @@ code_root/
 └── coco/
   ├── train2017/
   ├── val2017/
+  ├── train2014/
+  ├── val2014/
   └── annotations/
     ├── instances_train2017.json
     ├── instances_val2017.json
